@@ -25,7 +25,7 @@ color:#111;
 /* HEADER */
 header{
 height:100vh;
-background:linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.3)), url('hoodie muestra.jpg');
+background:linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.3)), url('hoodies-bg.webp');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -39,7 +39,9 @@ nav{
 padding:25px 8%;
 display:flex;
 justify-content:space-between;
+align-items:center;
 color:white;
+position:relative;
 }
 
 .logo{
@@ -47,10 +49,23 @@ font-size:28px;
 font-weight:800;
 }
 
+/* MENU */
+.menu{
+display:flex;
+}
+
 .menu a{
 margin-left:25px;
 color:white;
 text-decoration:none;
+}
+
+/* HAMBURGUESA */
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:white;
 }
 
 /* HERO */
@@ -110,6 +125,8 @@ color:white;
 /* CATALOGO */
 .catalogo{
 padding:80px 8%;
+max-width:1200px;
+margin:auto;
 }
 
 .grid{
@@ -127,8 +144,9 @@ box-shadow:0 10px 25px rgba(0,0,0,.1);
 
 .card img{
 width:100%;
-height:280px;
+height:300px;
 object-fit:contain;
+background:#fff;
 }
 
 .info{
@@ -182,7 +200,6 @@ color:#bbb;
 margin:15px 0 40px;
 }
 
-/* BOTONES CONTACTO */
 .botones{
 display:flex;
 justify-content:center;
@@ -208,7 +225,7 @@ transform:scale(1.05);
 .instagram{background:#E1306C;}
 .facebook{background:#1877F2;}
 
-/* BOTON FLOTANTE WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -221,19 +238,51 @@ z-index:1000;
 .whatsapp-float img{
 width:100%;
 height:100%;
-object-fit:contain;
 }
 
 .whatsapp-float:hover{
 transform:scale(1.1);
-transition:.3s;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
+
 .hero h1{font-size:40px;}
-.split{flex-direction:column;}
-.split img{width:100%;}
+
+.split{
+flex-direction:column;
+}
+
+.split img{
+width:100%;
+}
+
+/* HAMBURGUESA */
+.menu-toggle{
+display:block;
+}
+
+.menu{
+position:absolute;
+top:80px;
+right:0;
+background:#111;
+width:100%;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
+}
+
+.menu a{
+margin:15px 0;
+font-size:18px;
+}
+
+.menu.active{
+display:flex;
+}
+
 }
 
 </style>
@@ -244,7 +293,10 @@ transition:.3s;
 <header>
 <nav>
 <div class="logo">HOODIES STYLE</div>
-<div class="menu">
+
+<div class="menu-toggle" id="menu-toggle">☰</div>
+
+<div class="menu" id="menu">
 <a href="#">Inicio</a>
 <a href="#catalogo">Catálogo</a>
 <a href="#contacto">Contacto</a>
@@ -264,6 +316,10 @@ transition:.3s;
 <h2>Pásate a otro nivel</h2>
 <p>Diseños modernos y cómodos.</p>
 </div>
+</section>
+
+<section class="banner">
+<h2>Pregunta por el tuyo</h2>
 </section>
 
 <section class="catalogo" id="catalogo">
@@ -295,47 +351,6 @@ transition:.3s;
 <a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20rojo">Comprar</a>
 </div>
 </div>
-  <div class="card">
-<img src="buzo naranja.png">
-<div class="info">
-<h3>Blanco</h3>
-<div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20blanco">Comprar</a>
-</div>
-</div>
-  <div class="card">
-<img src="buzo verde.png">
-<div class="info">
-<h3>Blanco</h3>
-<div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20blanco">Comprar</a>
-</div>
-</div>
-  <div class="card">
-<img src="buzo azul claro.png">
-<div class="info">
-<h3>Blanco</h3>
-<div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20blanco">Comprar</a>
-</div>
-</div>
-  <div class="card">
-<img src="buzo azul.png">
-<div class="info">
-<h3>Blanco</h3>
-<div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20blanco">Comprar</a>
-</div>
-</div>
-  <div class="card">
-<img src="buzo morado.png">
-<div class="info">
-<h3>Blanco</h3>
-<div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20buzo%20blanco">Comprar</a>
-</div>
-</div>
-  
 
 </div>
 </section>
@@ -374,8 +389,17 @@ transition:.3s;
 </footer>
 
 <a href="https://wa.me/573042540209" class="whatsapp-float">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>
