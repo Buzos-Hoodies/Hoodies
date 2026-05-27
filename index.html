@@ -9,33 +9,21 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background:#f5f5f5;
-color:#111;
-}
+body{background:#f5f5f5;color:#111;}
 
-/* HEADER HERO PRO */
-
+/* HEADER */
 header{
 height:100vh;
-background:
-linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.2)),
-url('hero1.png');
+background:linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.2)), url('img/hero1.png');
 background-size:cover;
 background-position:center;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 }
-
-/* NAV */
 
 nav{
 padding:25px 8%;
@@ -44,10 +32,7 @@ justify-content:space-between;
 color:white;
 }
 
-.logo{
-font-size:28px;
-font-weight:800;
-}
+.logo{font-size:28px;font-weight:800;}
 
 .menu a{
 margin-left:25px;
@@ -56,22 +41,10 @@ text-decoration:none;
 }
 
 /* HERO */
+.hero{padding:0 8% 80px;color:white;max-width:600px;}
 
-.hero{
-padding:0 8% 80px;
-color:white;
-max-width:600px;
-}
-
-.hero h1{
-font-size:70px;
-font-weight:800;
-}
-
-.hero p{
-margin:20px 0;
-color:#ddd;
-}
+.hero h1{font-size:60px;font-weight:800;}
+.hero p{margin:20px 0;color:#ddd;}
 
 .btn{
 display:inline-block;
@@ -82,8 +55,7 @@ color:white;
 text-decoration:none;
 }
 
-/* SECCION IMAGEN DERECHA */
-
+/* SECCIONES */
 .split{
 display:flex;
 align-items:center;
@@ -96,40 +68,21 @@ width:50%;
 border-radius:20px;
 }
 
-.split .text{
-flex:1;
-}
-
-.split h2{
-font-size:50px;
-margin-bottom:20px;
-}
-
-/* SECCION FULL IMAGE */
+.split .text{flex:1;}
 
 .banner{
-height:80vh;
-background:
-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-url('hero2.png');
+height:70vh;
+background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('img/hero2.png');
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 color:white;
 }
 
-.banner h2{
-font-size:60px;
-}
-
 /* CATALOGO */
-
-.catalogo{
-padding:80px 8%;
-}
+.catalogo{padding:80px 8%;}
 
 .grid{
 display:grid;
@@ -150,14 +103,11 @@ height:280px;
 object-fit:cover;
 }
 
-.info{
-padding:20px;
-text-align:center;
-}
+.info{text-align:center;padding:20px;}
 
 .precio{
 color:#ff0077;
-font-size:25px;
+font-size:22px;
 margin:10px 0;
 }
 
@@ -169,62 +119,70 @@ border-radius:50px;
 text-decoration:none;
 }
 
-/* SECCION GRUPO */
-
+/* GRUPO */
 .grupo{
-padding:100px 8%;
+padding:80px 8%;
 text-align:center;
 }
 
 .grupo img{
 width:100%;
 border-radius:20px;
-margin-top:30px;
+margin-top:20px;
 }
 
-/* CONTACTO */
-
+/* CONTACTO PRO */
 .contacto{
 background:#111;
 color:white;
-padding:80px;
+padding:80px 20px;
 text-align:center;
-margin:50px;
+margin:50px auto;
 border-radius:40px;
+max-width:900px;
+}
+
+.contacto h2{font-size:40px;}
+.contacto .sub{color:#bbb;margin:15px 0 40px;}
+
+.botones{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .botones a{
-margin:10px;
-padding:15px 30px;
+padding:15px 35px;
 border-radius:50px;
 color:white;
 text-decoration:none;
+font-weight:600;
+min-width:160px;
+transition:.3s;
+}
+
+.botones a:hover{
+transform:scale(1.05);
 }
 
 .whatsapp{background:#25D366;}
 .instagram{background:#E1306C;}
 .facebook{background:#1877F2;}
 
-/* WHATSAPP FLOAT */
-
+/* FLOAT */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
-width:70px;
-}
-
-.whatsapp-float img{
-width:100%;
+width:60px;
 }
 
 /* RESPONSIVE */
-
 @media(max-width:768px){
 .hero h1{font-size:40px;}
 .split{flex-direction:column;}
 .split img{width:100%;}
-.banner h2{font-size:40px;}
 }
 
 </style>
@@ -233,7 +191,6 @@ width:100%;
 <body>
 
 <header>
-
 <nav>
 <div class="logo">HOODIES STYLE</div>
 <div class="menu">
@@ -248,42 +205,34 @@ width:100%;
 <p>Comodidad, estilo y flow en cada prenda.</p>
 <a href="#catalogo" class="btn">Comprar ahora</a>
 </div>
-
 </header>
 
-<!-- SECCION ESTILO -->
-
 <section class="split">
-<img src="2.png">
+<img src="img/2.png">
 <div class="text">
 <h2>Pásate a otro nivel</h2>
-<p>Diseños modernos, cómodos y listos para cualquier ocasión.</p>
+<p>Diseños modernos y cómodos.</p>
 </div>
 </section>
-
-<!-- BANNER -->
 
 <section class="banner">
 <h2>Pregunta por el tuyo</h2>
 </section>
 
-<!-- CATALOGO -->
-
 <section class="catalogo" id="catalogo">
-
 <div class="grid">
 
 <div class="card">
-<img src="buzo blanco.png">
+<img src="img/buzo blanco.png">
 <div class="info">
 <h3>Blanco</h3>
 <div class="precio">$50.000</div>
-<a class="btn-comprar" href="https://wa.me/573042540209?text=Quiero%20el%20blanco">Comprar</a>
+<a class="btn-comprar" href="https://wa.me/573042540209">Comprar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="buzo negro.webp">
+<img src="img/buzo negro.webp">
 <div class="info">
 <h3>Negro</h3>
 <div class="precio">$50.000</div>
@@ -292,7 +241,7 @@ width:100%;
 </div>
 
 <div class="card">
-<img src="buzo rojo.png">
+<img src="img/buzo rojo.png">
 <div class="info">
 <h3>Rojo</h3>
 <div class="precio">$50.000</div>
@@ -301,44 +250,35 @@ width:100%;
 </div>
 
 </div>
-
 </section>
-
-<!-- SECCION GRUPO -->
 
 <section class="grupo">
-<h2>Todos los colores disponibles</h2>
-<img src="hoodies.png">
+<h2>Todos los colores</h2>
+<img src="img/hoodies.png">
 </section>
-
-<!-- SECCION EXTRA -->
 
 <section class="split">
 <div class="text">
 <h2>Calidad premium</h2>
-<p>Material suave, resistente y perfecto para el día a día.</p>
+<p>Material suave y resistente.</p>
 </div>
-<img src="3.png">
+<img src="img/3.png">
 </section>
-
-<!-- IMAGEN SOCIAL -->
 
 <section class="grupo">
 <h2>Únete al estilo</h2>
-<img src="buzos iamgen de jovenes.jpg">
+<img src="img/buzos iamgen de jovenes.jpg">
 </section>
-
-<!-- CONTACTO -->
 
 <section class="contacto" id="contacto">
 <h2>Contáctanos</h2>
+<p class="sub">Resolvemos tus pedidos rápido 🚀</p>
 
 <div class="botones">
 <a href="https://wa.me/573042540209" class="whatsapp">WhatsApp</a>
 <a href="#" class="instagram">Instagram</a>
 <a href="#" class="facebook">Facebook</a>
 </div>
-
 </section>
 
 <footer style="text-align:center;padding:20px;">
