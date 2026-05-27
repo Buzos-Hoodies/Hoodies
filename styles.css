@@ -45,31 +45,53 @@ header {
   background: #333;
 }
 
-.contact {
-  text-align: center;
-  padding: 30px;
+.contacto{
+background:#111;
+color:white;
+padding:80px 20px;
+text-align:center;
+margin:50px;
+border-radius:40px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
 }
 
-.contact button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #111;
-  color: white;
-  cursor: pointer;
-  border-radius: 6px;
+.contacto h2{
+font-size:40px;
+margin-bottom:10px;
 }
 
-/* WhatsApp flotante */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  font-size: 30px;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.contacto .sub{
+color:#bbb;
+margin-bottom:40px;
 }
+
+/* CONTENEDOR BOTONES */
+.botones{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* BOTONES */
+.botones a{
+padding:15px 35px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+min-width:160px;
+}
+
+/* HOVER PRO */
+.botones a:hover{
+transform:scale(1.05);
+opacity:0.9;
+}
+
+.whatsapp{background:#25D366;}
+.instagram{background:#E1306C;}
+.facebook{background:#1877F2;}
