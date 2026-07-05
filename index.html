@@ -450,6 +450,40 @@ toggle.addEventListener("click", () => {
 menu.classList.toggle("active");
 });
 </script>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
 
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+
+// 🔥 DETECTAR NUMERO DINAMICO
+const params = new URLSearchParams(window.location.search);
+let telefono = params.get("tel");
+
+// SI NO HAY NUMERO, USA EL TUYO POR DEFECTO
+if(!telefono){
+telefono = "3042540209";
+}
+
+// AGREGAR CODIGO DE PAIS
+telefono = "57" + telefono;
+
+// CAMBIAR TODOS LOS LINKS DE WHATSAPP
+const links = document.querySelectorAll("a[href*='wa.me']");
+
+links.forEach(link => {
+
+let texto = link.getAttribute("href").split("?text=")[1];
+
+if(texto){
+link.href = "https://wa.me/" + telefono + "?text=" + texto;
+}else{
+link.href = "https://wa.me/" + telefono;
+}
+
+});
+</script>
 </body>
 </html>
